@@ -156,3 +156,4 @@ app.get('/', function (req, res) {
 app.listen(3000)
 ```
 i molt més que es pot fer amb els diferents paquets
+# [Exercici 01](exercicis/ej01.md)
