@@ -94,11 +94,11 @@ Podem obrir tot el directori al VScode i gestionar els arxius amb l'interficie g
 L'arxiu _index.js_ l'hem de crear nosaltres, ha de tenir el mateix nom qu eli hem indicat en el _package.json_
 ```
 root@DESKTOP-G4Q9KRE:/home/teoria# code .
-````
+```
 O utilitzar un editor de la mateixa terminal per fer el codi:
 ```
 root@DESKTOP-G4Q9KRE:/home/teoria# nano index.js
-````
+```
 Utilitzem el següent codi per veure com funciona
 ```
 const http = require("http");
@@ -116,9 +116,43 @@ Tornem a la terminal i executem
 ```
 root@DESKTOP-G4Q9KRE:/home/teoria# node index.js
 ```
+
 ![HelloWorld](img/imgHelloWorld1.png)
 
 I per tancar el servidor s'utilitza la comanda 
 ```
 ^C
 ```
+
+## Utilitzar paquets npm
+Abans d'utilitzar paquets nous es important llegir la documentació, que la pots trobar a la web:
+[https://www.npmjs.com/](https://www.npmjs.com/)
+Per instal·lar un paquet:
+```
+root@DESKTOP-G4Q9KRE:/home/teoria# npm install express
+
+added 57 packages, and audited 58 packages in 2s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+```
+en llistar el directori veurem que s'ha afegit el paquet amb les seves dependencies
+```
+root@DESKTOP-G4Q9KRE:/home/teoria# ls
+index.js  node_modules  package-lock.json  package.json
+```
+Per exemple el paquet _express_ serveix per aixecar un servidor de manera més rapida que la que hem vist abans:
+
+```
+const express = require('express')
+const app = express()
+
+app.get('/', function (req, res) {
+  res.send("<html><body><h1>Hello World!</h1></body></html>")
+})
+
+app.listen(3000)
+```
+i molt més que es pot fer amb els diferents paquets
