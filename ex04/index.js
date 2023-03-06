@@ -45,5 +45,3 @@ app.delete('/Usuaris', function (req, res) {
 })
 
 app.listen(3000)
-// Method to handle HTTP requests
-http.createServer(app).listen(80)
